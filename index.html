@@ -16,18 +16,25 @@
   <section>
     <h2>Gestión del Partido</h2>
 
-    <!-- Agregar Jugador -->
-    <div id="form-jugador">
-      <h3>Agregar Jugador</h3>
-      <input type="text" id="nombre" placeholder="Nombre del jugador" />
-      <label><input type="checkbox" id="invierno" class="etiqueta-checkbox" value="invierno" /> Fue en invierno</label>
-      <label><input type="checkbox" id="encuesta" class="etiqueta-checkbox" value="encuesta" /> Contesta encuesta</label>
-      <label><input type="checkbox" id="solidario" class="etiqueta-checkbox" value="solidario" /> Es solidario</label>
-      <button class="btn-agregar" onclick="agregarJugador()">Agregar</button>
-      <label for="nueva-prioridad">Nueva Prioridad:</label>
-      <input type="text" id="nueva-prioridad" placeholder="Escribe una nueva prioridad">
-      <button onclick="agregarNuevaPrioridad()">Agregar Prioridad</button>
+<!-- Agregar Jugador -->
+<div id="form-jugador">
+    <h3>Agregar Jugador</h3>
+    <input type="text" id="nombre" placeholder="Nombre del jugador" />
+  
+    <!-- Prioridades existentes -->
+    <div id="etiquetas-container">
+      <label><input type="checkbox" class="etiqueta-checkbox" value="invierno"> Fue en invierno</label>
+      <label><input type="checkbox" class="etiqueta-checkbox" value="encuesta"> Contesta encuesta</label>
+      <label><input type="checkbox" class="etiqueta-checkbox" value="solidario"> Es solidario</label>
     </div>
+  
+    <!-- Agregar nueva prioridad -->
+    <input type="text" id="nueva-prioridad" placeholder="Nueva prioridad">
+    <button onclick="agregarNuevaPrioridad()">Agregar Prioridad</button>
+  
+    <button class="btn-agregar" onclick="agregarJugador()">Agregar</button>
+  </div>
+  
 
     <!-- Confirmar Asistencia -->
     <div id="asistencia">

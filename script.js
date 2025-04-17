@@ -251,6 +251,32 @@ function eliminarJugador(index) {
     mostrarJugadores(); // Actualiza la lista de jugadores
   }
 }
-
+function agregarNuevaPrioridad() {
+    const nueva = document.getElementById("nueva-prioridad").value.trim();
+  
+    if (!nueva) {
+      alert("Escribí una prioridad para agregar");
+      return;
+    }
+  
+    // Evita duplicados
+    const existentes = Array.from(document.querySelectorAll(".etiqueta-checkbox"))
+      .map(cb => cb.value.toLowerCase());
+  
+    if (existentes.includes(nueva.toLowerCase())) {
+      alert("Esa prioridad ya existe 🛑");
+      return;
+    }
+  
+    // Crear nuevo checkbox
+    const container = document.getElementById("etiquetas-container");
+    const label = document.createElement("label");
+    label.innerHTML = `<input type="checkbox" class="etiqueta-checkbox" value="${nueva}"> ${nueva}`;
+    container.appendChild(label);
+  
+    // Limpiar input
+    document.getElementById("nueva-prioridad").value = "";
+  }
+  
 // ==== INICIALIZACIÓN ====
 mostrarJugadores();
