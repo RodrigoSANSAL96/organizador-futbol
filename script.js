@@ -227,21 +227,21 @@ function mostrarHistorial() {
 
 function editarJugador(index) {
   const jugador = jugadores[index];
-  const nuevasEtiquetas = [];
+  const nuevasEtiquetas = jugador.etiquetas;
 
-  const invierno = confirm(`¿${jugador.nombre} fue en invierno?`);
-  if (invierno) nuevasEtiquetas.push("invierno");
+  // Actualizar el nombre del jugador
+  document.getElementById("editar-nombre").value = jugador.nombre;
 
-  const encuesta = confirm(`¿${jugador.nombre} contesta la encuesta?`);
-  if (encuesta) nuevasEtiquetas.push("encuesta");
+  // Marcar los checkboxes según las etiquetas del jugador
+  document.getElementById("editar-invierno").checked = nuevasEtiquetas.includes("invierno");
+  document.getElementById("editar-encuesta").checked = nuevasEtiquetas.includes("encuesta");
+  document.getElementById("editar-solidario").checked = nuevasEtiquetas.includes("solidario");
 
-  const solidario = confirm(`¿${jugador.nombre} es solidario en los partidos?`);
-  if (solidario) nuevasEtiquetas.push("solidario");
+  // Mostrar el formulario de edición
+  toggleElemento("editar-jugador");
 
-  // Actualiza las etiquetas del jugador
-  jugadores[index].etiquetas = nuevasEtiquetas;
-  guardarJugadores();
-  mostrarJugadores();
+  // Guardar el índice de edición
+  indiceEdicion = index;
 }
 
 function eliminarJugador(index) {

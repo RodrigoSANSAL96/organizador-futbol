@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Organizador de Fútbol</title>
+  <title>Organizador de Partido</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,9 +20,9 @@
     <div id="form-jugador">
       <h3>Agregar Jugador</h3>
       <input type="text" id="nombre" placeholder="Nombre del jugador" />
-      <label><input type="checkbox" id="invierno" /> Fue en invierno</label>
-      <label><input type="checkbox" id="encuesta" /> Contesta encuesta</label>
-      <label><input type="checkbox" id="solidario" /> Es solidario</label>
+      <label><input type="checkbox" id="invierno" class="etiqueta-checkbox" value="invierno" /> Fue en invierno</label>
+      <label><input type="checkbox" id="encuesta" class="etiqueta-checkbox" value="encuesta" /> Contesta encuesta</label>
+      <label><input type="checkbox" id="solidario" class="etiqueta-checkbox" value="solidario" /> Es solidario</label>
       <button class="btn-agregar" onclick="agregarJugador()">Agregar</button>
       <label for="nueva-prioridad">Nueva Prioridad:</label>
       <input type="text" id="nueva-prioridad" placeholder="Escribe una nueva prioridad">
@@ -78,7 +78,10 @@
     <div id="editar-jugador" style="display: none;">
       <h3>Editar Prioridades del Jugador</h3>
       <input type="text" id="editar-nombre" disabled />
-      <input type="text" id="nueva-etiqueta" placeholder="Agregar nueva prioridad" />
+      <!-- Mostrar las etiquetas del jugador -->
+      <label><input type="checkbox" id="editar-invierno" class="etiqueta-checkbox" value="invierno" /> Fue en invierno</label>
+      <label><input type="checkbox" id="editar-encuesta" class="etiqueta-checkbox" value="encuesta" /> Contesta encuesta</label>
+      <label><input type="checkbox" id="editar-solidario" class="etiqueta-checkbox" value="solidario" /> Es solidario</label>
       <button class="btn-agregar" onclick="agregarEtiqueta()">Agregar</button>
       <div id="lista-etiquetas-editables"></div>
       <button class="btn-agregar" onclick="guardarEdicion()">Guardar Cambios</button>
