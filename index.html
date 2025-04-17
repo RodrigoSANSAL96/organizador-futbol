@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Organizador de Fútbol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Organizador de Partido</h1>
+
+  <!-- ============================= -->
+  <!-- 🟩 SECCIÓN: GESTIÓN DEL PARTIDO -->
+  <!-- ============================= -->
+  <section>
+    <h2>Gestión del Partido</h2>
+
+    <!-- Agregar Jugador -->
+    <div id="form-jugador">
+      <h3>Agregar Jugador</h3>
+      <input type="text" id="nombre" placeholder="Nombre del jugador" />
+      <label><input type="checkbox" id="invierno" /> Fue en invierno</label>
+      <label><input type="checkbox" id="encuesta" /> Contesta encuesta</label>
+      <label><input type="checkbox" id="solidario" /> Es solidario</label>
+      <button class="btn-agregar" onclick="agregarJugador()">Agregar</button>
+      <label for="nueva-prioridad">Nueva Prioridad:</label>
+      <input type="text" id="nueva-prioridad" placeholder="Escribe una nueva prioridad">
+      <button onclick="agregarNuevaPrioridad()">Agregar Prioridad</button>
+    </div>
+
+    <!-- Confirmar Asistencia -->
+    <div id="asistencia">
+      <h3>Confirmar Asistencia</h3>
+      <button onclick="mostrarAsistencia()">Seleccionar Asistentes</button>
+      <div id="lista-asistencia" style="display: none;"></div>
+      <button class="btn-agregar" onclick="guardarAsistencia()">Guardar Asistencia</button>
+    </div>
+
+    <!-- Sortear Equipos -->
+    <div id="acciones">
+      <button onclick="sortearEquipos()">Sortear Equipos</button>
+    </div>
+
+    <!-- Equipos Generados -->
+    <div id="equipos">
+      <h3>Equipos Sorteados</h3>
+      <div id="tabla-equipos"></div>
+      <button class="btn-agregar" onclick="compartirWhatsApp()">Compartir por WhatsApp</button>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 🟦 SECCIÓN: COMPROMISO Y ANÁLISIS -->
+  <!-- ============================= -->
+  <section>
+    <h2>Jugadores, Compromiso y Prioridades</h2>
+
+    <!-- Lista de Jugadores -->
+    <div id="jugadores">
+        <h3>Jugadores Registrados</h3>
+        <ul id="lista-jugadores"></ul>
+    </div>
+
+    <!-- Ranking -->
+    <div id="ranking">
+      <button onclick="mostrarRanking()">Ver Ranking</button>
+      <ul id="lista-ranking" style="display: none;"></ul>
+    </div>
+
+    <!-- Historial -->
+    <div id="historial">
+      <button onclick="mostrarHistorial()">Ver Historial</button>
+      <div id="tabla-historial" style="display: none;"></div>
+    </div>
+
+    <!-- Editor de Prioridades -->
+    <div id="editar-jugador" style="display: none;">
+      <h3>Editar Prioridades del Jugador</h3>
+      <input type="text" id="editar-nombre" disabled />
+      <input type="text" id="nueva-etiqueta" placeholder="Agregar nueva prioridad" />
+      <button class="btn-agregar" onclick="agregarEtiqueta()">Agregar</button>
+      <div id="lista-etiquetas-editables"></div>
+      <button class="btn-agregar" onclick="guardarEdicion()">Guardar Cambios</button>
+      <button onclick="cancelarEdicion()">Cancelar</button>
+      <button onclick="eliminarJugador()">Eliminar Jugador</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
